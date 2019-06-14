@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="MediaPlayer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MediaPlayer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+
+    <Grid>
+
+        <MediaElement x:Name="_mediaPlayer" AreTransportControlsEnabled="True" Margin="0,0,0,0" Visibility="Collapsed"/>
+        <Button Content="Back" HorizontalAlignment="Left"  VerticalAlignment="Top" Click="Button_Click_1" Height="100" Width="500" BorderThickness="0" Background="CadetBlue"/>
+        <ListView Name="slist" Opacity="0.50" HorizontalAlignment="Left" Width="500" IsItemClickEnabled="True" Background="CadetBlue" Margin="0,100,0,96" ItemsSource="{Binding songs}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" Margin="10,0,0,0"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Image Name="_AlbumArt" HorizontalAlignment="Left" VerticalAlignment="Top" Source="Assets/Square150x150Logo.scale-200.png" Margin="500,0,0,96" />
+
+        <Grid Margin="500,0,0,120">
+            <StackPanel Orientation="Vertical">
+                <Viewbox Height="237" Margin="0,0,710,0">
+                    <TextBlock Name="_Title" Text="test" FontSize="10" Margin="5,0,0,0" HorizontalAlignment="Stretch"/>
+                </Viewbox>
+                <Viewbox Margin="0,0,710,0" Height="237">
+                    <TextBlock Name="_Artist" Text="test" FontSize="10" Margin="5,0,0,0" HorizontalAlignment="Stretch"/>
+                </Viewbox>
+            </StackPanel>
+        </Grid>
+        <Button Content="Open" HorizontalAlignment="Left" Margin="959,288,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+    </Grid>
+</Page>
